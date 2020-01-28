@@ -7,6 +7,7 @@ COPY . .
 RUN npm run build
 
 FROM nginx
+EXPOSE 80
 # the nginx target folder is taken from 'https://hub.docker.com/_/nginx' (nginx default 'static-html-directory'
 COPY --from=builder /app/build /usr/share/nginx/html
 
